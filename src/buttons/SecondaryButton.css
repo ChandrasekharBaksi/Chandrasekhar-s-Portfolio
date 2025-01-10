@@ -1,0 +1,20 @@
+.secondary-button {
+  font-family: 'Apercu Pro - Medium', sans-serif;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  letter-spacing: -0.1px;
+  line-height: 1.125rem;
+  background-color: #f5f5f5;
+  color: #666;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background-color: #e0e0e0;
+}

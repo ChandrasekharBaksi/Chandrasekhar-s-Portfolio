@@ -1,0 +1,20 @@
+.outlined-button {
+    font-family: 'Apercu Pro - Medium', sans-serif;
+    padding: 0.5rem 0.625rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    letter-spacing: -0.1px;
+    line-height: 1.125rem;
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.outlined-button:hover {
+    background-color: #e8f0ff;
+}

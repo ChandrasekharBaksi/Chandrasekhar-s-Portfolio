@@ -1,37 +1,54 @@
-export const Projects = () => {
-    const projects = [
-        { id: 1, title: "Project One", banner: "https://via.placeholder.com/400x200" },
-        { id: 2, title: "Project Two", banner: "https://via.placeholder.com/400x200" },
-        { id: 3, title: "Project Three", banner: "https://via.placeholder.com/400x200" },
-        { id: 4, title: "Project Four", banner: "https://via.placeholder.com/400x200" },
-        { id: 5, title: "Project Five", banner: "https://via.placeholder.com/400x200" },
-        { id: 6, title: "Project Six", banner: "https://via.placeholder.com/400x200" },
-        { id: 7, title: "Project Seven", banner: "https://via.placeholder.com/400x200" },
-        { id: 8, title: "Project Eight", banner: "https://via.placeholder.com/400x200" },
-        { id: 9, title: "Project Nine", banner: "https://via.placeholder.com/400x200" },
-    ];
+import "./Projects.css";
 
-    return (
-        <div className="portfolio max-w-6xl mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {projects.map((project) => (
-                <div
-                    key={project.id}
-                    className="card group relative overflow-hidden rounded-lg border border-gray-300 shadow-md"
-                    style={{ aspectRatio: "16 / 9" }}
-                >
-                    <img
-                        src={project.banner}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                        <h3 className="text-white text-lg font-bold group-hover:text-red-400 relative">
-                            {project.title}
-                            <span className="block h-0.5 w-0 bg-red-400 group-hover:w-full transition-all duration-300"></span>
-                        </h3>
-                    </div>
-                </div>
-            ))}
+// Import images from the assets folder
+import Project1 from "./assets/projects/project1.png";
+import Project2 from "./assets/projects/project2.png";
+import Project3 from "./assets/projects/project3.png";
+import Project4 from "./assets/projects/project4.png";
+import Project5 from "./assets/projects/project5.png";
+import Project6 from "./assets/projects/project6.png";
+
+export const Projects = () => {
+  const projects = [
+    { id: 1, name: "Project Alpha", date: "JAN, 20 2024", type: "Web App", ratio: "1:1", image: Project1 },
+    { id: 2, name: "Project Beta", date: "JAN, 20 2024", type: "Web App", ratio: "4:3", image: Project2 },
+    { id: 3, name: "Project Gamma", date: "JAN, 20 2024", type: "Web App", ratio: "3:4", image: Project3 },
+    { id: 4, name: "Project Delta", date: "JAN, 20 2024", type: "Web App", ratio: "16:9", image: Project4 },
+    { id: 5, name: "Project Epsilon", date: "JAN, 20 2024", type: "Web App", ratio: "9:16", image: Project5 },
+    { id: 6, name: "Project Epsilon", date: "JAN, 20 2024", type: "Web App", ratio: "9:16", image: Project6 },
+  ];
+
+  const getAspectClass = (ratio) => {
+    switch (ratio) {
+      case "1:1":
+        return "aspect-square";
+      case "4:3":
+        return "aspect-[4/3]";
+      case "3:4":
+        return "aspect-[3/4]";
+      case "16:9":
+        return "aspect-video";
+      case "9:16":
+        return "aspect-[9/16]";
+      default:
+        return "aspect-square";
+    }
+  };
+
+  return (
+    <div className="projects-container">
+      {projects.map((project) => (
+        <div key={project.id} className={`project-card ${getAspectClass(project.ratio)}`}>
+          <img src={project.image} alt={project.name} className="project-image" />
+          <div className="card-content">
+            <div className="card-date">{project.date} • {project.type}</div>
+            <div className="card-title">
+              <div className="checkbox"></div>
+              <span>{project.name}</span>
+            </div>
+          </div>
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};

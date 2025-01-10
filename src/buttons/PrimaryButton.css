@@ -1,0 +1,17 @@
+.primary-button {
+  font-family: 'Apercu Pro - Medium', sans-serif;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  letter-spacing: -0.1px;
+  line-height: 1.125rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: #0056b3;
+}

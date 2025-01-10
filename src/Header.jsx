@@ -2,7 +2,7 @@ export const Header = () => {
     return (
         < header className="header" >
             <div className="logo">
-                <img src="my-portfolio/src/assets/profile.png" alt="Logo" className="logo-img" />
+                <img src="src/assets/profile.png" alt="Logo" className="logo-img" />
             </div>
             <nav>
                 <ul className="nav-links">
