@@ -1,0 +1,122 @@
+/* Main container */
+
+.design-system-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+    max-width: 900px;
+}
+
+.design-system-image {
+    width: 100%;
+    max-width: 900px;
+    /* Controls max width */
+    aspect-ratio: 16 / 9;
+    /* Maintains 16:9 ratio */
+    overflow: hidden;
+    border-radius: 12px;
+    /* Rounded corners */
+    display: flex;
+
+}
+
+.design-system-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image maintains its aspect ratio */
+    border-radius: 12px;
+
+}
+
+
+@media (min-width: 768px) {
+    .design-system-container {
+        flex-direction: row;
+        align-items: center;
+        /* Ensures proper alignment */
+    }
+}
+
+/* Left section - Heading & date */
+.design-system-left {
+    width: 100%;
+    text-align: left;
+    /* Ensures left alignment */
+}
+
+@media (min-width: 768px) {
+    .design-system-left {
+        width: 60%;
+    }
+}
+
+.design-date {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.design-heading {
+    font-family: Anonymous Pro, monospace;
+    text-align: left;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: -2px;
+    line-height: 2.25rem;
+}
+
+/* Right section - Bullet list */
+.design-system-right {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .design-system-right {
+        width: 35%;
+        display: flex;
+        justify-content: flex-end;
+        /* Moves the list closer */
+    }
+}
+
+.design-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.design-list li {
+    font-size: 0.875rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    margin: 0.25rem;
+}
+
+.design-list li::before {
+    content: "•";
+    margin-right: 10px;
+    color: #111;
+    font-size: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .design-system-container {
+        padding: 20px;
+    }
+
+    .design-heading {
+        font-size: 28px;
+    }
+
+    .design-list {
+        font-size: 14px;
+    }
+}
